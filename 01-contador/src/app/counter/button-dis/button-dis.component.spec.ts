@@ -22,4 +22,14 @@ describe('ButtonDisComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it("debe emitir el valor de 1", () => {
+    let nuevoContador = 0
+    component.onDis.subscribe(contador => {
+      nuevoContador = contador
+    })
+    component.dis()
+    expect(nuevoContador).toBe(-1)
+  })
+
 });
