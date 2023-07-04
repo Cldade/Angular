@@ -3,12 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: "app-contador",
     templateUrl: "./counter.component.html",
-    styles: [`
-        h1 {
-            color:red;
-            font-size: 3rem;
-        }
-    `]
+    styleUrls :["./counter.component.css"]
 })
 export class CounterComponent{
     contador:number = 0
