@@ -1,0 +1,7 @@
+<p *ngFor="let p of persona | keyvalue">
+    {{p | json}}
+</p>
+<p>------</p>
+<p *ngFor="let p of persona | keyvalue">
+    {{p.key}}: {{p.value | json}}
+</p>

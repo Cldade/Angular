@@ -1,0 +1,19 @@
+<ol>
+    <li *ngFor="let f of frutas | slice: 1:3">
+        {{f}}
+    </li>
+</ol>
+<p>---</p>
+<ol>
+    <li *ngFor="let f of frutas">
+        {{f}}
+    </li>
+</ol>
+<p>---</p>
+<p>
+    Letras: {{letras | slice: 1:4}}
+</p>
+<p>---</p>
+<p>
+    Letras: {{letras}}
+</p>

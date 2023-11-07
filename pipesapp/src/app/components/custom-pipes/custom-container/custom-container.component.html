@@ -1,0 +1,6 @@
+<p>{{dark ? "Dark Mode" : "Ligth Mode"}}</p>
+<button (click)="changeMode()" class="btn btn-info">Change Mode</button>
+<hr/>
+<h1>
+    Temperatura: {{grados | temperature:tipo}}
+</h1>
