@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveContainerComponent } from './reactive-container/reactive-container.component';
+import { AreaMouseDirective } from './directives/area-mouse.directive';
 
 
 
 @NgModule({
   declarations: [
-    ReactiveContainerComponent
+    ReactiveContainerComponent,
+    AreaMouseDirective
   ],
   imports: [
     CommonModule
