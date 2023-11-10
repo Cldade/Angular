@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormularioTemplateComponent } from './formulario-template/formulario-template.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,8 @@ import { FormularioTemplateComponent } from './formulario-template/formulario-te
     FormularioTemplateComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [FormularioTemplateComponent]
 })
