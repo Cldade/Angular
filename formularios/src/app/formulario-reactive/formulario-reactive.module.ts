@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormularioReactiveComponent } from './formulario-reactive/formulario-reactive.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,7 @@ import { FormularioReactiveComponent } from './formulario-reactive/formulario-re
     FormularioReactiveComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, ReactiveFormsModule
   ],
   exports: [FormularioReactiveComponent]
 })

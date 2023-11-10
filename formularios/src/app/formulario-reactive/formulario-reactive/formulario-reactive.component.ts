@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-reactive',
@@ -7,9 +8,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioReactiveComponent implements OnInit {
 
-  constructor() { }
+  miFormulario: FormGroup = this.fb.group({
+    proyecto: this.fb.control('', [
+      Validators.required, 
+      Validators.minLength(3),
+      Validators.maxLength(15)
+    ]),
+    horas: this.fb.control(0, [
+      Validators.required,
+      Validators.min(0),
+      Validators.max(50)
+    ]),
+    tecnologias: this.fb.array([])
+  })
+
+  tecnologia: FormControl = this.fb.control('', [
+    Validators.required, Validators.minLength(3), Validators.maxLength(20)
+  ])
+
+  proyectos: any[] = [];
+
+  get tecnologias() {
+    return this.miFormulario.get('tecnologias') as FormArray;
+  }
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
+  validar() {
+    return this.miFormulario.invalid && this.miFormulario.touched
+  }
+
+  agregarTecnologia() {
+    if(this.tecnologia.invalid) {
+      this.tecnologia.markAsTouched();
+      return
+    }
+    this.tecnologias.push(this.fb.control(this.tecnologia.value));
+    this.tecnologia.reset();
+  }
+
+  agregarProyecto() {
+    if(this.miFormulario.invalid) {
+      this.miFormulario.markAllAsTouched();
+      return;
+    }
+    this.proyectos.push(this.miFormulario.value);
+    this.miFormulario.reset()
+    this.tecnologias.clear();
+  }
+
+  
 }
