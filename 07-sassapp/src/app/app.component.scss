@@ -1,0 +1,28 @@
+@import "config";
+.btn {
+    background-color: $secondary-color;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+
+    &.btn-dark{
+        background-color: $dark-color;
+        color: #ccc;
+        &:hover{
+            background-color: lighten($color: $dark-color, $amount: 30);
+        }
+
+        &:active {
+            background-color: darken($color: $dark-color, $amount: 5);
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: $primary-color;
+    }
+}
