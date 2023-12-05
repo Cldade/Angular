@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-12 col-md-4">
+    <img [src]="proyectoData.img" [alt]="proyectoData.nombre" class="rounded img-thumbnail">
+    <h2> {{proyectoData.nombre}}</h2>
+    <div>
+      <a target="_blank" [href]="proyectoData.url" class="btn btn-secondary w-100">Visualizar aplicación</a>
+    </div>
+  </div>
+  <div class="col-12 col-md-4">
+    <h2>Descripción</h2>
+    <hr>
+    <p>{{proyectoData.descripcion}}</p>
+    <h2>Tecnologías</h2>
+    <hr>
+    <ul class="list-group">
+      <li *ngFor="let t of proyectoData.tecnologias" class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
+      {{t}}
+      </li>
+    </ul>
+    <button (click)="goProyecto()" class="btn btn-info w-100 my-3">Volver a proyectos</button>
+  </div>
+</div>
+
